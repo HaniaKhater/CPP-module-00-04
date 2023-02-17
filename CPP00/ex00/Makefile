@@ -1,10 +1,24 @@
-all:
+NAME	=	megaphone
 
+COMPILER	=	c++
 
-clean
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-fclean
+SRCS	=	megaphone.cpp
 
-re
+OBJS	=	$(SRCS:.cpp=.o)
 
-.PHONY
+all:		$(NAME)
+
+$(NAME):	$(OBJS)
+		$(COMPILER) $(CFLAGS) $(OBJS) -o $(NAME)
+
+clean:
+	rm -rf $(OBJS)
+
+fclean:		clean
+	rm -rf $(NAME)
+
+re:			fclean all
+
+.PHONY:		all clean fclean re
