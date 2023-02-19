@@ -2,8 +2,8 @@
 #include <iomanip>
 #include "Contact.class.hpp"
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef PHONEBOOK_CLASS_HPP
+#define PHONEBOOK_CLASS_HPP
 
 class   PhoneBook {
     public:
@@ -15,8 +15,8 @@ class   PhoneBook {
     private:
         Contact _contacts[8];
         int     _curr_index;
-        void    _print_table() const;
-        void    _display_info(int index) const;
+        bool _print_table(void) const;
+        void _display_info(int index) const;
 };
 
 #endif

@@ -1,7 +1,9 @@
+#include "Contact.class.hpp"
 #include <iostream>
 
 Contact::Contact() {}
 Contact::~Contact() {}
+
 void        Contact::set_firstName( std::string firstName ) {
     this->_firstName = firstName;
 }
@@ -9,7 +11,7 @@ void        Contact::set_lastName( std::string lastName ) {
     this->_lastName = lastName;
 }
 void        Contact::set_nickname( std::string nickname ) {
-    this->_nickname = _nickname;
+    this->_nickname = nickname;
 }
 void        Contact::set_number( std::string number ) {
     this->_number = number;

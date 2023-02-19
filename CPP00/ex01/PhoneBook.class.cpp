@@ -1,3 +1,10 @@
+
+//adjust layout of messages
+//setw for contact
+//only write blabla is invalid if not empty
+//fix table division
+//use is numeric in index check?
+
 #include "PhoneBook.class.hpp"
 #include <ios>
 
@@ -41,6 +48,11 @@ int PhoneBook::set_contact() {
     std::cout << "Enter the contact's darkest secret:" << std::endl;
     if (set_feild(input)) return EXIT_FAILURE;
     tmp.set_secret(input);
+    
+    this->_contacts[this->_curr_index] = tmp;
+    this->_curr_index = (this->_curr_index + 1) % 8;
+
+    std::cout << "Contact " << tmp.get_firstName() << " " << tmp.get_lastName() << " has been successfully created!" << std::endl;
     return EXIT_SUCCESS;
 }
 
@@ -51,33 +63,33 @@ static std::string truncate(std::string s) {
 
 //add the std::right before setw
 static void print_row(Contact contact, int index) {
-    if (index == 0) {
+/*   if (index == 0) {
         std::cout << std::right << std::setw(10) << "Index" << "|";
         std::cout << std::right << std::setw(10) << "First Name" << "|";
         std::cout << std::right << std::setw(10) << "Last Name" << "|";
         std::cout << std::right << std::setw(10) << "Nickname" << std::endl;
     }
-    std::cout << std::setw(10) << index << "|";
-    std::cout << std::setw(10) << truncate(contact.get_firstName()) << "|";
-    std::cout << std::setw(10) << truncate(contact.get_lastName()) << "|";
-    std::cout << std::setw(10) << truncate(contact.get_nickname()) << "|";
-    std::cout << std::setw(10) << truncate(contact.get_number()) << std::endl;
+*/  std::cout << std::right << std::setw(10) << index << "|";
+    std::cout << std::right << std::setw(10) << truncate(contact.get_firstName()) << "|";
+    std::cout << std::right << std::setw(10) << truncate(contact.get_lastName()) << "|";
+    std::cout << std::right << std::setw(10) << truncate(contact.get_nickname()) << "|";
+    std::cout << std::right << std::setw(10) << truncate(contact.get_number()) << std::endl;
 }
 
-void _print_table( void ) const {
-    if (this->_contacts[0].get_firstName.empty()) {
+bool PhoneBook::_print_table(void) const {
+    if (this->_contacts[0].get_firstName().empty()) {
         std::cout << "You have no contacts yet, please add contacts first." << std::endl;
-        return ;
+        return true;
     }
     for (int i = 0; i < 8, i++;) {
         if (!this->_contacts[i].get_firstName().empty())
             print_row(this->_contacts[i], i);
     }
-    return ;
+    return false;
 }
 
-void _display_info(int index) const {
-    std::cout << "-------------------------" << std::endl << "      CONTACT " << std::endl << "-------------------------" << std::endl;
+void PhoneBook::_display_info(int index) const {
+    std::cout << "-------------------------" << std::endl << "          CONTACT " << std::endl << "-------------------------" << std::endl;
     std::cout << "First Name: " << this->_contacts[index].get_firstName() << std::endl;
     std::cout << "Last Name: " << this->_contacts[index].get_lastName() << std::endl;
     std::cout << "Nickname: " << this->_contacts[index].get_nickname() << std::endl;
@@ -85,11 +97,14 @@ void _display_info(int index) const {
     std::cout << "Darkest Secret: " << this->_contacts[index].get_secret() << std::endl;
 }
 
-int     get_contact( void ) const {
-    str::string input;
+int PhoneBook::get_contact(void) const {
+    std::string input;
     int         index;
+    bool        empty;
 
-    _print_table();
+
+    empty = _print_table();
+    if (empty) return EXIT_SUCCESS;
     std::cout << "Enter the index of the contact you would like to view." << std::endl;
     while (true)
     {
@@ -98,7 +113,7 @@ int     get_contact( void ) const {
             std::cout << "An index is needed to display the contact information, please try again." << std::endl;
         else {
             index = input[0] - 48;
-            if (intput[1] || index < 0 || index > 7 || this->_contacts[index].get_firstName().empty())
+            if (input[1] || index < 0 || index > 7 || this->_contacts[index].get_firstName().empty())
                 std::cout << input << " is an invalid index, please try again." << std::endl;
             else
                 break;
