@@ -80,7 +80,8 @@ void PhoneBook::_print_table(void) const {
     std::cout << std::right << std::setw(10) << "Last Name" << "|";
     std::cout << std::right << std::setw(10) << "Nickname" << "|" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
-    for (int i = 0; _contacts[i].get_firstName().empty() == false; i++) {
+    for (int i = 0; i < 8; i++) {
+		if (_contacts[i].get_firstName().empty() == true) break;
 		std::cout << "|";
 		std::cout << std::right << std::setw(10) << i + 1 << "|";
     	std::cout << std::right << std::setw(10) << truncate(_contacts[i].get_firstName()) << "|";
