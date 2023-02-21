@@ -9,8 +9,8 @@ int main(void)
 	std::string &stringREF = string;
 	
 	std::cout << "The memory address of the string variable is " << red << &string << reset << std::endl;
-	std::cout << "The memory address held by stringPTR " << red << stringPTR << reset << std::endl;
-	std::cout << "The memory address held by stringREF " << red << &stringREF << reset << std::endl;
+	std::cout << "The memory address held by stringPTR is " << red << stringPTR << reset << std::endl;
+	std::cout << "The memory address held by stringREF is " << red << &stringREF << reset << std::endl;
 	std::cout << "The value of the string variable is " << red << string << reset << std::endl;
 	std::cout << "The value pointed to by stringPTR is " << red << *stringPTR <<reset << std::endl;
 	std::cout << "The value pointed to by stringREF is " << red << stringREF << reset << std::endl;
