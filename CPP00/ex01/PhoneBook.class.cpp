@@ -24,7 +24,7 @@ static bool  is_numeric(std::string s) {
     return true;
 }
 
-static int  set_field(std::string &input, bool nb) {
+static int  set_field( std::string &input, bool nb ) {
     while (1) {
         if (!getline(std::cin, input))
             return EXIT_FAILURE;
@@ -66,13 +66,13 @@ int PhoneBook::set_contact() {
     return EXIT_SUCCESS;
 }
 
-static std::string truncate(std::string s) {
+static std::string truncate( std::string s ) {
     if (s.length() > 10) 
 		return s.substr(0, 9) + ".";
     return (s);
 }
 
-void PhoneBook::_print_table(void) const {
+void PhoneBook::_print_table( void ) const {
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "|";
 	std::cout << std::right << std::setw(10) << "Index" << "|";
@@ -91,7 +91,7 @@ void PhoneBook::_print_table(void) const {
 	std::cout << "---------------------------------------------" << std::endl;
 }
 
-void PhoneBook::_display_info(int index) const {
+void PhoneBook::_display_info( int index ) const {
     std::cout << "----------------------------" << std::endl << "          CONTACT " << std::endl << "----------------------------" << std::endl;
     std::cout << "First Name:      " << this->_contacts[index].get_firstName() << std::endl;
     std::cout << "Last Name:       " << this->_contacts[index].get_lastName() << std::endl;
@@ -100,7 +100,7 @@ void PhoneBook::_display_info(int index) const {
     std::cout << "Darkest Secret:  " << this->_contacts[index].get_secret() << std::endl;
 }
 
-int PhoneBook::get_contact(void) const {
+int PhoneBook::get_contact( void ) const {
     std::string input;
     int         index;
     bool        empty;

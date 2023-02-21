@@ -24,7 +24,7 @@ int main(int ac, char **av) {
                 std::cout << std::endl;
                 j++;
             } else
-                std::cout << (char)std::toupper(av[i][j]);
+                std::cout << (char)std::toupper( av[i][j] );
         }
     }
     std::cout << std::endl;
