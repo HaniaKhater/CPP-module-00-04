@@ -11,3 +11,16 @@
 /* ************************************************************************** */
 
 #include <iostream>
+
+class   Harl {
+    public:
+        Harl( void );
+        ~Harl( void );
+        void    complain( std::string level );
+    
+    private:
+        void    _debug( void );
+        void    _info( void );
+        void    _error( void );
+        void    _warning( void );
+};
