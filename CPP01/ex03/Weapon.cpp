@@ -1,12 +1,13 @@
 #include "Weapon.hpp"
+#include <ios>
 
-Weapon::Weapon() {} //maybe add type as a param
+Weapon::Weapon(std::string type) : _type(type) {} //maybe add type as a param
 Weapon::~Weapon() {}
 
-std::string getType( void ) {
+const std::string		&Weapon::getType( void ) const {
     return (this->_type);
 }
 
-void        setType( std::string type) {
+void        	Weapon::setType( std::string type) {
     this->_type = type;
 }

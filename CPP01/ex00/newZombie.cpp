@@ -12,21 +12,6 @@
 
 #include "Zombie.hpp"
 
-std::string	createName( void ) {
-	char	name[4];
-	std::string vowel;
-	std::string	cons;
-	
-	srand(time(NULL));
-	vowel = "aouiye";
-	cons = "bcdfghjklmnprstvwxz";
-	name[0] = cons[std::rand() % 19];
-	name[1] = vowel[std::rand() % 7];
-	name[2] = cons[std::rand() % 19];
-	name[3] = '\0';
-	return (name);
-}
-
 Zombie*	newZombie( std::string name ) {
 	Zombie*	created = new Zombie();
 

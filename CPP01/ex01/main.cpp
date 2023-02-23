@@ -5,31 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 06:46:43 by hkhater           #+#    #+#             */
-/*   Updated: 2023/02/23 06:49:32 by hkhater          ###   ########.fr       */
+/*   Created: 2023/02/21 05:16:31 by hkhater           #+#    #+#             */
+/*   Updated: 2023/02/21 05:16:34 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Zombie.hpp"
 
-int main()
-{
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
+int	main(int ac, char **av) {
+	Zombie*	first;
+	int			N = 10;
+
+	if (ac == 1)
+		first = zombieHorde(N, "");
+	else
+		first = zombieHorde(N, av[1]);
+	for (int i = 1; i < N; i++) {
+		std::cout << "Zombie " << i << " -> ";
+		first[i].announce();
 	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.attack();
-		jim.setWeapon(club);
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return 0;
+	delete [] first;
+	return EXIT_SUCCESS;
 }
