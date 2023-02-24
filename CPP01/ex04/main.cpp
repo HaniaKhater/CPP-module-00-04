@@ -6,7 +6,7 @@
 /*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 06:51:54 by hkhater           #+#    #+#             */
-/*   Updated: 2023/02/23 09:36:58 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/02/24 04:11:21 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,10 @@ void	fakeSed(char *fileName, std::string toFind, std::string toReplace) {
 }
 
 int	main(int ac, char** av) {
+	const std::string red("\033[0;31m");
+	const std::string reset("\033[0m");
 	if (ac != 4) {
-		std::cout << "Please try -> ./sedIsForLosers <filename> <str_to_find> <str_to_replace_it_with>" << std::endl;
+		std::cout << "Invalid input, please try -> " << red << "./sedIsForLosers  [filename]  [str_to_find]  [str_to_replace_it_with]" << reset << std::endl;
 		return EXIT_SUCCESS;
 	}
 	std::string find = av[2];

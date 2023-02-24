@@ -5,25 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 05:16:31 by hkhater           #+#    #+#             */
-/*   Updated: 2023/02/24 03:57:18 by hkhater          ###   ########.fr       */
+/*   Created: 2023/02/23 09:46:18 by hkhater           #+#    #+#             */
+/*   Updated: 2023/02/24 04:33:02 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-int	main(int ac, char **av) {
-	Zombie*	first;
-	int			N = 10;
+int main( int ac, char **av) {
+	Harl	harl;
 
 	if (ac == 1)
-		first = zombieHorde(N, "");
+		harl.complain("");
 	else
-		first = zombieHorde(N, av[1]);
-	for (int i = 0; i < N; i++) {
-		std::cout << "Zombie " << i + 1 << " -> ";
-		first[i].announce();
-	}
-	delete [] first;
-	return EXIT_SUCCESS;
+		harl.complain(av[1]);
+	return (0);
 }

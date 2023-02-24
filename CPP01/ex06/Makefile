@@ -5,18 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/23 09:46:06 by hkhater           #+#    #+#              #
-#    Updated: 2023/02/24 04:05:17 by hkhater          ###   ########.fr        #
+#    Created: 2023/02/23 09:46:21 by hkhater           #+#    #+#              #
+#    Updated: 2023/02/24 02:56:53 by hkhater          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	sedIsForLosers
+NAME	=	harlFilter
 
 COMPILER	=	c++
 
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRCS	=	./main.cpp
+SRCS	=	./main.cpp\
+		./Harl.cpp\
 
 OBJS	=	$(SRCS:.cpp=.o)
 
@@ -29,7 +30,7 @@ clean:
 	rm -rf $(OBJS)
 
 fclean:		clean
-	rm -rf $(NAME) ./*.replace
+	rm -rf $(NAME)
 
 re:			fclean all
 

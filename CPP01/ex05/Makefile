@@ -6,11 +6,11 @@
 #    By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 09:46:21 by hkhater           #+#    #+#              #
-#    Updated: 2023/02/23 09:48:23 by hkhater          ###   ########.fr        #
+#    Updated: 2023/02/24 02:57:10 by hkhater          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Harl
+NAME	=	harl
 
 COMPILER	=	c++
 

@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 05:16:31 by hkhater           #+#    #+#             */
-/*   Updated: 2023/02/24 03:57:18 by hkhater          ###   ########.fr       */
+/*   Created: 2023/02/23 09:46:15 by hkhater           #+#    #+#             */
+/*   Updated: 2023/02/24 03:28:12 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-int	main(int ac, char **av) {
-	Zombie*	first;
-	int			N = 10;
-
-	if (ac == 1)
-		first = zombieHorde(N, "");
-	else
-		first = zombieHorde(N, av[1]);
-	for (int i = 0; i < N; i++) {
-		std::cout << "Zombie " << i + 1 << " -> ";
-		first[i].announce();
-	}
-	delete [] first;
-	return EXIT_SUCCESS;
-}
+class   Harl {
+    public:
+        Harl( void );
+        ~Harl( void );
+        void    complain( std::string level );
+    
+    private:
+        void    _debug( void );
+        void    _info( void );
+        void    _error( void );
+        void    _warning( void );
+		int		_interpret( std::string level );
+};
