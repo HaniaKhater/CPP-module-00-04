@@ -28,10 +28,28 @@ class Fixed
 		Fixed( const float nb );
 		~Fixed();
 		Fixed	&operator=( const Fixed fixed );
+		bool	operator==( const Fixed &second ) const ;
+		bool	operator!=( const Fixed &second ) const ;
+		bool	operator>( const Fixed &second ) const ;
+		bool	operator<( const Fixed &second ) const ;
+		bool	operator<=( const Fixed &second ) const ;
+		bool	operator>=( const Fixed &second ) const ;
+		Fixed	operator+( const Fixed &second ) const ;
+		Fixed	operator-( const Fixed &second ) const ;
+		Fixed	operator*( const Fixed &second ) const ;
+		Fixed	operator/( const Fixed &second ) const ;
+		Fixed	operator++( int );
+		Fixed	&operator++( void );
+		Fixed	operator--( int );
+		Fixed	&operator--( void );
 		int		getRawBits( void ) const;
 		void	setRawBits( int nb );
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
+		Fixed		&min( Fixed &a, Fixed &b );
+		const Fixed	&min( const Fixed &a, const Fixed &b );
+		Fixed		&max( Fixed &a, Fixed &b );
+		const Fixed	&max( const Fixed &a, const Fixed &b );
 };
 
 std::ostream	&operator<<(std::ostream &output, const Fixed &toPrint);
