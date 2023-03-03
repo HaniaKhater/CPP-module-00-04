@@ -68,7 +68,7 @@ Fixed	Fixed::operator+( const Fixed &second ) const {
 Fixed	Fixed::operator-( const Fixed &second ) const {
 	Fixed	result;
 
-	result.setRawBits(this->_value + second.getRawBits());
+	result.setRawBits(this->_value - second.getRawBits());
 	return result;
 }
 
@@ -76,9 +76,9 @@ Fixed	Fixed::operator*( const Fixed &second ) const {
 	Fixed	result;
 
     std::cout << *this << "*" << second << " = ";
-	result.setRawBits(this->_value * second.getRawBits());
+	 std::cout << this->_value << "*" << second.getRawBits() << " = ";
+	result.setRawBits((this->_value / 256) * second.getRawBits());
 	std::cout << result << std::endl;
-    
     return result;
 }
 
@@ -90,22 +90,22 @@ Fixed	Fixed::operator/( const Fixed &second ) const {
 }
 
 Fixed	Fixed::operator++( int ) {
-	this->_value++;
-	return *this;
-}
-
-Fixed	&Fixed::operator++( void ) {
 	++this->_value;
 	return *this;
 }
 
+Fixed	&Fixed::operator++( void ) {
+	this->_value++;
+	return *this;
+}
+
 Fixed	Fixed::operator--( int ) {
-	this->_value--;
+	--this->_value;
 	return *this;
 }
 
 Fixed	&Fixed::operator--( void ) {
-	--this->_value;
+	this->_value--;
 	return *this;
 }
 
