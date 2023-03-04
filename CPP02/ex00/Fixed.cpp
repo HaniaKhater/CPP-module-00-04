@@ -6,7 +6,7 @@
 /*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 07:07:06 by hkhater           #+#    #+#             */
-/*   Updated: 2023/02/28 04:34:26 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/03 22:07:45 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int     Fixed::getRawBits( void ) const {
     return ( this->_raw_value );
 }
 
-void    Fixed::setRawBits( int nb ) {
+void    Fixed::setRawBits( int const raw ) {
     std::cout << __func__ << " member function called" << std::endl;
-    this->_raw_value = nb;
+    this->_raw_value = raw;
 }

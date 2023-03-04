@@ -6,7 +6,7 @@
 /*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 07:07:06 by hkhater           #+#    #+#             */
-/*   Updated: 2023/02/28 04:53:39 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/04 01:57:03 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,23 +75,22 @@ Fixed	Fixed::operator-( const Fixed &second ) const {
 Fixed	Fixed::operator*( const Fixed &second ) const {
 	Fixed	result;
 
-    std::cout << *this << "*" << second << " = ";
-	 std::cout << this->_value << "*" << second.getRawBits() << " = ";
-	result.setRawBits((this->_value / 256) * second.getRawBits());
-	std::cout << result << std::endl;
+	result.setRawBits((this->_value * second.getRawBits()) >> this->_fractionalB);
     return result;
 }
 
 Fixed	Fixed::operator/( const Fixed &second ) const {
 	Fixed	result;
 
-	result.setRawBits(this->_value / second.getRawBits());
+	result.setRawBits((this->_value / second.getRawBits()) << this->_fractionalB);
 	return result;
 }
 
 Fixed	Fixed::operator++( int ) {
-	++this->_value;
-	return *this;
+	Fixed	tmp = *this;
+	
+	this->_value++;
+	return tmp;
 }
 
 Fixed	&Fixed::operator++( void ) {
@@ -100,8 +99,10 @@ Fixed	&Fixed::operator++( void ) {
 }
 
 Fixed	Fixed::operator--( int ) {
-	--this->_value;
-	return *this;
+	Fixed	tmp = *this;
+	
+	this->_value--;
+	return tmp;
 }
 
 Fixed	&Fixed::operator--( void ) {
@@ -121,7 +122,7 @@ int		Fixed::toInt(void) const {
 	return this->_value >> this->_fractionalB;
 }
 
-float		Fixed::toFloat(void) const {
+float	Fixed::toFloat(void) const {
 	return (float)this->_value / (float)(1 << this->_fractionalB);
 }
 
