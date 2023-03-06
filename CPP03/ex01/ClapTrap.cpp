@@ -6,7 +6,7 @@
 /*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 02:24:09 by hkhater           #+#    #+#             */
-/*   Updated: 2023/03/06 04:10:33 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/06 05:56:58 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,16 @@ ClapTrap::ClapTrap( ClapTrap &ref ) {
 
 ClapTrap::~ClapTrap( void ) {
 	std::cout << "ClapTrap default destructor called" << std::endl;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap & rhs){
+	if (this == &rhs)
+		return(*this);
+	_name = rhs._name;
+	_hitPts = rhs._hitPts;
+	_energyPts = rhs._energyPts;
+	_attackDmg = rhs._attackDmg;
+	return(*this);
 }
 
 void	ClapTrap::attack( const std::string& target ) {

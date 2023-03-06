@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 02:36:18 by hkhater           #+#    #+#             */
-/*   Updated: 2023/03/06 06:00:38 by hkhater          ###   ########.fr       */
+/*   Created: 2023/03/04 02:24:19 by hkhater           #+#    #+#             */
+/*   Updated: 2023/03/06 04:28:12 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-
 #include "ClapTrap.hpp"
-#include <iostream>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap : public ClapTrap {
-	private:
-		
-	public:
-		ScavTrap( void );
-		ScavTrap( std::string name );
-		ScavTrap( ScavTrap &ref );
-		~ScavTrap( void );
-		ScavTrap& operator=(const ScavTrap & rhs);
-		void	guardGate( void ) const;
-		void	attack( const std::string& target);
-};
-
-#endif
+int		main () {
+	FragTrap	c("Carlos");
+	ScavTrap	d("Dimitris");
+	
+	c.displayPts();
+	d.displayPts();
+	c.highFivesGuys();
+	c.attack("Dimitris");
+	d.takeDamage(4);
+	d.attack("Carlos");
+	d.beRepaired(1);
+	d.beRepaired(1);
+	d.beRepaired(1);
+	d.beRepaired(1);
+	d.beRepaired(1);
+	c.displayPts();
+	d.displayPts();
+	d.guardGate();
+	return 0;
+}

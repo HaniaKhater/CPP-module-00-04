@@ -6,7 +6,7 @@
 /*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 02:36:16 by hkhater           #+#    #+#             */
-/*   Updated: 2023/03/06 06:01:05 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/06 06:01:29 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap( void ) {
 }
 
 ScavTrap::ScavTrap( std::string name ) {
-	std::cout << "ScavTrap naming constructor called" << std::endl;
+	std::cout << "ScavTrap constructor called" << std::endl;
 	_name = name;
 	_hitPts = 100;
 	_energyPts = 50;
@@ -29,7 +29,7 @@ ScavTrap::ScavTrap( std::string name ) {
 }
 
 ScavTrap::ScavTrap( ScavTrap &ref ) {
-	std::cout << "ScavTrap default constructor called" << std::endl;
+	std::cout << "ScavTrap copy constructor called" << std::endl;
 	_name = ref._name;
 	_hitPts = ref._hitPts;
 	_energyPts = ref._energyPts;

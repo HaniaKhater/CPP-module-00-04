@@ -6,7 +6,7 @@
 /*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 02:24:09 by hkhater           #+#    #+#             */
-/*   Updated: 2023/03/06 05:57:11 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/06 05:57:22 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap( void ) {
 }
 
 ClapTrap::ClapTrap( std::string name ) : _name(name) {
-	std::cout << "ClapTrap naming constructor" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 	_hitPts = 10;
 	_energyPts = 10;
 	_attackDmg = 0;
@@ -57,19 +57,19 @@ void	ClapTrap::attack( const std::string& target ) {
 }
 
 void	ClapTrap::takeDamage( unsigned int amount ) {
-	std::cout << "ClapTrap " << this->_name  << " took " << amount << " damage points!" << std::endl;
+	std::cout << this->_name  << " took " << amount << " damage points!" << std::endl;
 	this->_attackDmg += amount;
 }
 
 void	ClapTrap::beRepaired( unsigned int amount ) {
 	if (!this->hasEnergy()) return;
-	std::cout << "ClapTrapp " << this->_name << " repaired itself and got " << amount << " hit point back!" << std::endl;
+	std::cout << this->_name << " repaired itself and got " << amount << " hit point back!" << std::endl;
 	this->_hitPts += amount;
 	this->_energyPts--;
 }
 
 void	ClapTrap::displayPts( void ) const {
-	std::cout << "ClapTrap " << this->_name << ": " << this->_hitPts << " hit points, " << this->_energyPts << " energy points, " << this->_attackDmg << " damage points." << std::endl;
+	std::cout << this->_name << ": " << this->_hitPts << " hit points, " << this->_energyPts << " energy points, " << this->_attackDmg << " damage points." << std::endl;
 }
 
 bool	ClapTrap::hasEnergy( void ) const {
