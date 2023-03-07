@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 01:13:05 by hania             #+#    #+#             */
-/*   Updated: 2023/03/07 03:58:50 by hania            ###   ########.fr       */
+/*   Created: 2023/03/07 04:04:07 by hania             #+#    #+#             */
+/*   Updated: 2023/03/07 04:07:54 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat( void ) {
-    std::cout << "Cat default constructor called" << std::endl;
-    _type = "Cat";
+WrongCat::WrongCat( void ) {
+    std::cout << "WrongCat default constructor called" << std::endl;
+    _type = "WrongCat";
 }
 
-Cat::Cat( Cat &ref ) {
-    std::cout << "Cat copy constructor called" << std::endl;
+WrongCat::WrongCat( WrongCat &ref ) {
+    std::cout << "WrongCat copy constructor called" << std::endl;
     *this = ref;
 }
 
-Cat::~Cat( void ) {
-    std::cout << "Cat destructor called" << std::endl;
+WrongCat::~WrongCat( void ) {
+    std::cout << "WrongCat destructor called" << std::endl;
 }
 
-Cat &Cat::operator=(const Cat &rhs) {
-	std::cout << "Cat assign constructor has been called" << std::endl;
+WrongCat &WrongCat::operator=(const WrongCat &rhs) {
+	std::cout << "WrongCat assign constructor has been called" << std::endl;
 	_type = rhs._type;
 	return *this;
 }
 
-void    Cat::makeSound( void ) const {
+void    WrongCat::makeSound( void ) const {
     std::cout << "Meow Meow" << std::endl;
 }
