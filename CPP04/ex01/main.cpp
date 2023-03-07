@@ -6,7 +6,7 @@
 /*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 01:13:19 by hania             #+#    #+#             */
-/*   Updated: 2023/03/07 07:06:03 by hania            ###   ########.fr       */
+/*   Updated: 2023/03/07 07:29:01 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,23 @@
 
 int main( void )
 {
-    const Animal *j = new Dog();
-    const Animal *i = new Cat();
-    
-    delete j; // should not create a leak
-    delete i;
+    int nb = 8;
+
+    Animal* animals[nb];
+    std::cout << "--------------------------------------------" << std::endl;
+    std::cout << "--------- Filling the Animal Array ---------" << std::endl;
+    std::cout << "--------------------------------------------" << std::endl;
+	for(int i = 0; i < nb; i++){
+		if (i % 2)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
+	}
+    std::cout << "--------------------------------------------" << std::endl;
+    std::cout << "----------- Deleting Each Animal -----------" << std::endl;
+    std::cout << "--------------------------------------------" << std::endl;
+	for(int i = 0; i < nb; i++)
+		delete animals[i];
     
     return 0;
 }

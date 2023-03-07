@@ -6,7 +6,7 @@
 /*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 06:43:09 by hania             #+#    #+#             */
-/*   Updated: 2023/03/07 06:55:22 by hania            ###   ########.fr       */
+/*   Updated: 2023/03/07 07:11:14 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ Brain::~Brain( void ) {
 
 Brain  &Brain::operator=( Brain &rhs ) {
     std::cout << "Brain assignation operator called" << std::endl;
-    *this->ideas = *rhs.ideas;
+    if (this == &rhs)
+		return *this;
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = rhs.ideas[i];
     return( *this );
 }
