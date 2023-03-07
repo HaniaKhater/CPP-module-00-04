@@ -6,7 +6,7 @@
 /*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 04:04:12 by hania             #+#    #+#             */
-/*   Updated: 2023/03/07 04:09:13 by hania            ###   ########.fr       */
+/*   Updated: 2023/03/07 06:24:22 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ WrongDog &WrongDog::operator=(const WrongDog &rhs) {
 }
 
 void    WrongDog::makeSound( void ) const {
-    std::cout << "Meow Meow" << std::endl;
+    std::cout << "Woof Woof" << std::endl;
 }

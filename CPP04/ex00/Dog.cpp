@@ -6,7 +6,7 @@
 /*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 01:13:11 by hania             #+#    #+#             */
-/*   Updated: 2023/03/07 06:19:05 by hania            ###   ########.fr       */
+/*   Updated: 2023/03/07 06:24:45 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ Dog &Dog::operator=(const Dog &rhs) {
 }
 
 void    Dog::makeSound( void ) const {
-    std::cout << "Woff Woff" << std::endl;
+    std::cout << "Woof Woof" << std::endl;
 }
