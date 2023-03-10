@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hania <hania@student.42.fr>                +#+  +:+       +#+         #
+#    By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 01:12:46 by hania             #+#    #+#              #
-#    Updated: 2023/03/07 04:19:01 by hania            ###   ########.fr        #
+#    Updated: 2023/03/10 01:05:20 by hkhater          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,9 @@ SRCS	=	./main.cpp\
 		./WrongCat.cpp\
 
 OBJS	=	$(SRCS:.cpp=.o)
+
+.cpp.o:
+			${COMPILER} ${CFLAGS} -c $< -o $(<:.cpp=.o)
 
 all:		$(NAME)
 

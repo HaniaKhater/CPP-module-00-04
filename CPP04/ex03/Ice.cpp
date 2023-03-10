@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:05:49 by hania             #+#    #+#             */
-/*   Updated: 2023/03/08 03:12:14 by hania            ###   ########.fr       */
+/*   Updated: 2023/03/10 01:01:24 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Ice::Ice( void ) : AMateria("ice") {
 }
 
 Ice::Ice( Ice &ref ) : AMateria("ice") {
+	(void)ref;
     std::cout << "Ice Copy constructor called" << std::endl;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:05:44 by hania             #+#    #+#             */
-/*   Updated: 2023/03/08 03:12:08 by hania            ###   ########.fr       */
+/*   Updated: 2023/03/10 01:01:45 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Cure::Cure( void ) : AMateria("cure") {
 }
 
 Cure::Cure( Cure &ref ) : AMateria("cure") {
+	(void)ref;
     std::cout << "Cure Copy constructor called" << std::endl;
 }
 

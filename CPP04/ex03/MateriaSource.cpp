@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 01:13:22 by hania             #+#    #+#             */
-/*   Updated: 2023/03/08 03:21:55 by hania            ###   ########.fr       */
+/*   Updated: 2023/03/10 01:02:07 by hkhater          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ MateriaSource::MateriaSource( MateriaSource &ref ) : _count(0) {
 
 MateriaSource::~MateriaSource( void ) {
     for (int i = 0; i < 4; ++i) {
-        if (_inventory[i] != nullptr)
+        if (_inventory[i])
             delete _inventory[i];
     }
 }

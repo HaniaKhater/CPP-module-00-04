@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hania <hania@student.42.fr>                +#+  +:+       +#+         #
+#    By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 01:12:46 by hania             #+#    #+#              #
-#    Updated: 2023/03/08 02:29:22 by hania            ###   ########.fr        #
+#    Updated: 2023/03/10 00:07:29 by hkhater          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	Interface
 
 COMPILER	=	c++
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	= -g3	-Wall -Wextra -Werror -std=c++98
 
 INCS	= ./Character.hpp\
 		./Ice.hpp\
@@ -32,6 +32,9 @@ SRCS	=	./main.cpp\
 		./MateriaSource.cpp\
 
 OBJS	=	$(SRCS:.cpp=.o)
+
+.cpp.o:
+			${COMPILER} ${CFLAGS} -c $< -o $(<:.cpp=.o)
 
 all:		$(NAME)
 
