@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 04:22:40 by hkhater           #+#    #+#             */
-/*   Updated: 2023/03/06 06:01:57 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/12 00:01:47 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ FragTrap::FragTrap( std::string name ) {
 	_attackDmg = 30;
 }
 
-FragTrap::FragTrap( FragTrap &ref ) {
+FragTrap::FragTrap( FragTrap &ref ) : ClapTrap(ref._name) {
 	std::cout << "FragTrap default constructor called" << std::endl;
 	_name = ref._name;
 	_hitPts = ref._hitPts;

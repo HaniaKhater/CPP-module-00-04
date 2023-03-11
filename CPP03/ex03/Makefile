@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+         #
+#    By: hania <hania@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/04 02:24:26 by hkhater           #+#    #+#              #
-#    Updated: 2023/03/06 05:39:37 by hkhater          ###   ########.fr        #
+#    Updated: 2023/03/11 23:46:11 by hania            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,9 @@ SRCS	=	./main.cpp\
 		./DiamondTrap.cpp\
 
 OBJS	=	$(SRCS:.cpp=.o)
+
+.cpp.o:
+		${COMPILER} ${CFLAGS} -c $< -o $(<:.cpp=.o)
 
 all:		$(NAME)
 

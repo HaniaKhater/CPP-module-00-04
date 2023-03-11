@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 04:33:47 by hkhater           #+#    #+#             */
-/*   Updated: 2023/03/06 06:05:02 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/12 00:31:54 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,14 @@ DiamondTrap::DiamondTrap( void ) : ClapTrap(), ScavTrap(), FragTrap() {
 	_attackDmg = 30;
 }
 
-DiamondTrap::DiamondTrap( std::string name ) : _name(name), ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name) {
+DiamondTrap::DiamondTrap( std::string name ) :  ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name) {
 	std::cout << "DiamondTrap constructor called" << std::endl;
 	_hitPts = 100;
 	_energyPts = 50;
 	_attackDmg = 30;
 }
 
-DiamondTrap::DiamondTrap( DiamondTrap &ref ) {
-	std::cout << "DiamondTrap copy constructor called" << std::endl;
-	_name = ref._name;
+DiamondTrap::DiamondTrap( DiamondTrap &ref ) : ClapTrap(ref._name + "_clap_name"), ScavTrap(ref._name), FragTrap(ref._name), _name(ref._name) {
 	_hitPts = ref._hitPts;
 	_energyPts = ref._energyPts;
 	_attackDmg = ref._attackDmg;
