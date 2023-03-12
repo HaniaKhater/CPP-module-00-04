@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 07:43:36 by hania             #+#    #+#             */
-/*   Updated: 2023/03/10 01:02:57 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/12 02:50:52 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "Character.hpp"
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
+#include <iostream>
 
 int main()
 {
@@ -27,8 +28,10 @@ int main()
     me->equip(tmp);
     me->equip(tmp);
     me->equip(tmp);
+    delete tmp;
     tmp = src->createMateria("cure");
     me->equip(tmp);
+    delete tmp;
     ICharacter *bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);

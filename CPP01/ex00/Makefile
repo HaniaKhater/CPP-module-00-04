@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+         #
+#    By: hania <hania@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 05:16:18 by hkhater           #+#    #+#              #
-#    Updated: 2023/02/21 05:16:21 by hkhater          ###   ########.fr        #
+#    Updated: 2023/03/12 00:37:59 by hania            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ SRCS	=	./main.cpp\
 		./randomChump.cpp\
 
 OBJS	=	$(SRCS:.cpp=.o)
+
+.cpp.o:
+			${COMPILER} ${CFLAGS} -c $< -o $(<:.cpp=.o)
 
 all:		$(NAME)
 

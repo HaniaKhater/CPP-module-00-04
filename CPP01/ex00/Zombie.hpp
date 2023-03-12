@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 05:28:04 by hkhater           #+#    #+#             */
-/*   Updated: 2023/02/21 05:28:07 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/12 00:42:32 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP

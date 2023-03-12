@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 05:16:31 by hkhater           #+#    #+#             */
-/*   Updated: 2023/02/21 05:16:34 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/12 00:40:53 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <cstdlib>
+#include <iostream>
 
 int	main() {
 	Zombie*	zombie;
@@ -19,5 +21,5 @@ int	main() {
 	zombie->announce();
 	delete zombie;
 	randomChump("lolo");
-	return EXIT_SUCCESS;
+	return 0;
 }

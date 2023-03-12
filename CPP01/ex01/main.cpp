@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 05:16:31 by hkhater           #+#    #+#             */
-/*   Updated: 2023/02/24 03:57:18 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/12 00:43:47 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <iostream>
 
 int	main(int ac, char **av) {
 	Zombie*	first;

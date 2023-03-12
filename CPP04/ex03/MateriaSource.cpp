@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 01:13:22 by hania             #+#    #+#             */
-/*   Updated: 2023/03/10 01:02:07 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/12 02:35:45 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,38 @@ MateriaSource::MateriaSource( void ) : _count(0) {
     }
 }
 
-MateriaSource::MateriaSource( MateriaSource &ref ) : _count(0) {
+MateriaSource::MateriaSource( MateriaSource &ref ) : _count(ref._count) {
     for (int i = 0; i < 4; ++i) {
         _inventory[i] = ref._inventory[i];
     }
 }
 
 MateriaSource::~MateriaSource( void ) {
-    for (int i = 0; i < 4; ++i) {
-        if (_inventory[i])
+    std::cout << "MateriaSource destructor called" << std::endl;
+    for (int i = 0; i < _count; ++i) {
+        if (_inventory[i] != NULL) {
             delete _inventory[i];
+            _inventory[i] = NULL;
+        }
     }
 }
 
 MateriaSource  &MateriaSource::operator=( MateriaSource &rhs ) {
     std::cout << "MateriaSource assignation operator called" << std::endl;
-    for (int i = 0; i < 4; ++i) {
-        _inventory[i] = rhs._inventory[i];
-    }
-    return( *this );
+    if (this == &rhs)
+		return *this;
+	for (int i = 0; i < _count; i++)
+	{
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
+		this->_inventory[i] = rhs._inventory[i]->clone();
+	}
+	return *this;
 }
 
 void    MateriaSource::learnMateria(AMateria *m) {
     if (_count < 4 && m) {
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < _count; i++) {
             if (_inventory[i] == NULL) {
                 _inventory[i] = m->clone();
                 _count++;
@@ -52,7 +60,7 @@ void    MateriaSource::learnMateria(AMateria *m) {
 }
 
 AMateria    *MateriaSource::createMateria(std::string const &type) {
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < _count; i++) {
         if (_inventory[i] && _inventory[i]->getType() == type) {
             return _inventory[i]->clone();
         }
