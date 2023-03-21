@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkhater <hkhater@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:05:49 by hania             #+#    #+#             */
-/*   Updated: 2023/03/10 01:01:24 by hkhater          ###   ########.fr       */
+/*   Updated: 2023/03/21 20:16:50 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,19 @@
 #include "ICharacter.hpp"
 
 Ice::Ice( void ) : AMateria("ice") {
-    std::cout << "Ice default constructor called" << std::endl;
 }
 
 Ice::Ice( Ice &ref ) : AMateria("ice") {
 	(void)ref;
-    std::cout << "Ice Copy constructor called" << std::endl;
 }
 
 Ice::Ice( std::string type ) : AMateria(type) {
-    std::cout << "Ice custom constructor called" << std::endl;
 }
 
 Ice::~Ice( void ) {
-    std::cout << "Default destructor called" << std::endl;
 }
 
 Ice &Ice::operator=( Ice &rhs ) {
-	std::cout << "Ice assignation operator called" << std::endl;
 	if (this == &rhs)
 		return *this;
 	this->_type = rhs._type;
@@ -44,5 +39,5 @@ AMateria    *Ice::clone( void ) const {
 }
 
 void    Ice::use( ICharacter &target ) {
-    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+    std::cout << " shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

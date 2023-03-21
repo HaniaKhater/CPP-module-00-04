@@ -6,7 +6,7 @@
 /*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:05:47 by hania             #+#    #+#             */
-/*   Updated: 2023/03/08 03:25:57 by hania            ###   ########.fr       */
+/*   Updated: 2023/03/21 19:45:17 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Cure : public AMateria {
         Cure( void );
         Cure( Cure &ref );
         Cure( std::string type);
-        virtual ~Cure( void );
+        ~Cure( void );
         Cure    &operator=( Cure &rhs );
         AMateria *clone() const;
         void    use( ICharacter &target );

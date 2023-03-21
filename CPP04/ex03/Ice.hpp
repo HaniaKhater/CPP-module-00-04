@@ -6,7 +6,7 @@
 /*   By: hania <hania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:05:51 by hania             #+#    #+#             */
-/*   Updated: 2023/03/08 03:26:39 by hania            ###   ########.fr       */
+/*   Updated: 2023/03/21 19:44:41 by hania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Ice : public AMateria {
         Ice( void );
         Ice( Ice &ref );
         Ice( std::string type);
-        virtual ~Ice( void );
+        ~Ice( void );
         Ice    &operator=( Ice &rhs );
         AMateria *clone() const;
         void    use( ICharacter &target );    
